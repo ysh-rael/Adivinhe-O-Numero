@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>adivinhe um número</title>
+	<style type="text/css">
+		* {
+			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		}
+		body {
+			background-image: url(imagens/aguas-pingo.jpg);
+		}
+		div#jogo {
+			margin: auto;
+			margin-top: 6%;
+			width: 50%;
+			padding: 5% 5% 1% 5%;
+			background-color: #000000bf;
+			text-align: center;
+			border-radius: 10px;
+		}
+
+		h1, h2 {
+			color: snow;
+			margin-top: 5%;
+			size: 2em;
+			text-shadow: 1px 1px 1px #000000;
+		}
+
+		p { 
+			color: rgb(211, 218, 218);
+			text-align: justify;
+			text-align: center;
+		}
+
+
+		label {
+			color: rgb(253, 253, 253);
+		}
+
+		input#enviar {
+			padding: 1.2%;
+			background-color: rgba(200, 200, 200, 0.6);
+			border-top: rgba(215, 215, 215, 0.5);
+			border-left: rgb(215, 215, 215);
+			border-right: rgb(215, 215, 215);
+			border-bottom: rgb(215, 215, 215);
+			margin-left: 2%;
+			border-radius: 10px;
+			font-weight: bolder;
+		}
+
+		input#enviar:hover {
+			background-color: rgb(222,222,222);
+			font-weight: bolder;
+			border-radius: 10px;
+		}
+
+
+		input#palpite {
+			padding: 1%;
+			color: snow;
+			text-indent: 15%;
+			margin-bottom: 2%;
+			border: 1px solid snow;
+			border-radius: 10px;
+			background-color: transparent;
+		}
+
+		footer {
+			color: gray;
+			margin-top:10%;
+			text-align: center;
+		}
+		a {
+			color: gray;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: snow;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="jogo">
+		<h2>Jogo Adivinhe Um Número</h2>
+		<P>Selecionamos um número aleatório entre 1 e 100. Veja se consegue adivinhar em 10 chances ou menos.<br> Lhe diremos se seu palpite está com valor alto ou baixo.</P>
+		<label>Seu palpite:</label> 
+
+		<input type="number" id="palpite" max="100" min="1"> 
+
+		<input type="button" id="enviar" onclick="enviarpalpite()" value="Enviar Palpite">
+
+
+		<p id="seusPalpites">Palpites Anteriores: </p>
+
+		<p id="Resultado"></p><!-- certo, errado, fim de jogo ou parabéns- acertou! -->
+
+		<p id="altoBaixo"></p><!-- seu palpite está muito alto/baixo -->
+		<p id="botao"></p>
+ 
+	 <footer>
+			<a href="https://instagram.com/ysh_rael/" target="_blank"><img src="imagens/instagram-mark.png">@Ysh_rael</a>
+			<a href="https://github.com/ysh-rael/" target="_blank"><img src="imagens/github-mark.png">ysh-rael</a>
+			<img src="imagens/gmail-mark.png"><span>Ysp.rael@gmail.com</span>
+			<p style="color: rgb(180,180,180);">Direitos Resesvados &copy;Ysh-rael</p>
+ 	 </footer>
+
+	 </div>
+
+
+<!-- 
+	<h1>quero que você faça...</h1>
+	 <p style="width: 90%; text-align: left; text">Quero que você crie um jogo simples do tipo adivinhe um número. Ele deve gerar um número aleatório de 1 a 100, depois desafiar o jogador a adivinhar o número em 10 rodadas. A cada rodada deve ser dito ao jogador se ele está certo ou errado, se estiver errado, deve ser dito se o palpite é muito baixo ou muito alto. Também deve ser mostrado ao jogador os números que ele tentou adivinhar anteriormente. O jogo termina se o jogador acertar o número ou acabarem o número de tentativas. Quando o jogo acabar, deve ser dado ao jogador a opção de jogar novamente.
+	 </p>
+<p>
+	
+		<ol>
+			<li>Gerar um número aleatório entre 1 e 100.</li>
+			<li>Gravar o número do turno que o jogador está. Iniciar em 1.</li>
+			<li>Dar ao jogador uma forma de adivinhar o número.</li>
+			<li>Após a tentativa ter sido submetida, primeiro gravar em algum lugar para que o usuário possa ver as tentativas anteriores.</li>
+			<li>Depois, verificar se o palpite está correto.</li>
+			<li>Se estiver correto:</li>
+			<li>Escrever mensagem de parabéns. Ok</li>
+			<li>Impedir que o jogador insira mais respostas (isso pode bugar o jogo).</li>
+			<li>Mostrar controle que permita ao jogador reiniciar o jogo. </li>
+			<li>Se o palpite estiver errado e o jogador ainda tem turnos sobrando:</li>
+			<li>Dizer ao jogador que ele está errado.</li>
+			<li>Permitir que ele insira outra resposta.</li>
+			<li>Incrementar o número do turno em 1.</li>
+			<li>Se o jogador está errado mas não tem turnos sobrando:</li>
+			<li>Dizer ao jogador que o jogo acabou.</li>
+			<li>Impedir que o jogador insira mais respostas (isso pode bugar o jogo).</li>
+			<li>Mostrar controle que permita ao jogador reiniciar o jogo.</li>
+			<li>Quando reiniciar, tenha certeza de resetar todas as variáveis e a interface do jogo, então volte para o passo 1.</li>
+		 </ol>
+</p> -->
+<script type="text/javascript">
+	var div = window.document.getElementById('jogo')
+	var numAleatorio = Math.floor(Math.random() * 100 + 1)
+	var turno = [txtPalpite]
+	var contagemPalpites = 1;
+	var txtPalpite = window.document.getElementById('palpite')
+	var palpite = [txtPalpite.value]
+	var enviar = window.document.getElementById('enviar')
+
+	var historicoPalpites = window.document.getElementById('seusPalpites')
+	var resultado = window.document.getElementById('Resultado')
+	var altoBaixo = window.document.getElementById('altoBaixo')
+	var bnj = window.document.getElementById('botao')
+	function enviarpalpite() {
+		var palpite = txtPalpite.value
+		historicoPalpites.innerHTML += `${palpite}  `
+
+
+		
+ // SE ACERTAR
+		if (palpite == numAleatorio) {
+			resultado.innerHTML = 'PARABÉNS! Seu Palpite Está Certo'
+			resultado.style.backgroundColor= '#00ff00'
+			resultado.style.color= '#ffffff'
+			altoBaixo.innerHTML = ''
+			configFimJogo()
+			} else if (contagemPalpites === 10) {
+				resultado.innerHTML = `!!!FIM DE JOGO!!!`
+				configFimJogo()
+			} else {
+				if (palpite < numAleatorio) {
+ //se palpite for menor
+				altoBaixo.innerHTML = 'Seu Palpite está Muito Baixo'
+				resultado.innerHTML = `ERRADO!`
+				resultado.style.backgroundColor= '#FF0000'
+				resultado.style.color= '#ffffff'
+			} else{
+ //se palpite for maior
+				altoBaixo.innerHTML = 'Seu palpite Está Muito Alto'
+				resultado.innerHTML = `ERRADO!`
+				resultado.style.backgroundColor= '#FF0000'
+				resultado.style.color= '#ffffff'
+			}
+		}
+				contagemPalpites++
+				txtPalpite.value = ''
+		  		txtPalpite.focus()		
+	}
+	
+
+
+	function configFimJogo() {
+		txtPalpite.disabled = true
+		enviar.disabled = true
+		botaoReinicio = document.createElement('button');
+  		botaoReinicio.textContent = 'Iniciar novo jogo';
+  		bnj.appendChild(botaoReinicio);
+  		botaoReinicio.addEventListener('click', reiniciarJogo);
+  		altoBaixo.innerHTML = `<strong>${numAleatorio}</strong>`
+	}
+
+	function reiniciarJogo() {
+		  contagemPalpites = 1;
+
+		  var reiniciarParas = document.querySelectorAll('#resultado');
+		  for (var i = 0 ; i < reiniciarParas.length ; i++) {
+		    reiniciarParas[i].textContent = '';
+		  }
+		
+		  botaoReinicio.parentNode.removeChild(botaoReinicio);
+		
+		  txtPalpite.disabled = false
+		  enviar.disabled = false
+		  txtPalpite.value = ''
+		  altoBaixo.innerHTML = ''
+		  txtPalpite.focus()
+		
+		 historicoPalpites.innerHTML = 'Palpites Anteriores: '
+		 resultado.innerHTML = ''
+		 resultado.style.backgroundColor= '#cfcfcf'
+		
+		  numAleatorio = Math.floor(Math.random() * 100) + 1;
+
+	}
+</script>
+</body>
+</html>
+
+<!-- COMPLETO E FUNCIONANDO! -->
