@@ -1,4 +1,5 @@
-[# Adivinhe-O-Numero](http://ysh-rael.github.io/Adivinhe-O-Numero/)
+# Adivinhe-O-Numero 
+[link: github-pages](http://ysh-rael.github.io/Adivinhe-O-Numero/)
 ![inicio--adivinhe-numero](https://user-images.githubusercontent.com/79410863/117735675-50aea680-b1cc-11eb-9995-bb2c70e8fb32.png)
 
 Um jogo em que um número aleatório entre 1 e 100 é escolhido e o Jogador terá 10 palpites para descobrir qual é o Número enquanto lhe dizemos se seu palpite foi muito Alto ou Baixo!
