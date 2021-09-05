@@ -10,6 +10,10 @@ Um jogo em que um número aleatório entre 1 e 100 é escolhido e o Jogador ter�
 ### Sorte ou Estratégia?
 
 ## Toda ajuda é sempre bem vinda!
+<<<<<<< Updated upstream
 caso queira entrar em contato, me escrreva um emal: [Ysp.raelgmail.com](http://mailto:Ysp.raelgmail.com)
+=======
+caso queira entrar em contato, me escreva um email: Ysp.raelgmail.com 
+>>>>>>> Stashed changes
 
 Ou então, me mande uma mensagem no direct do Instagram: [@ysh_rael](https://instagram.com/ysh_rael)
